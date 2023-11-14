@@ -10,16 +10,17 @@ import {
 import Test from './test';
 import App from './App';
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-    },
-    {
-        path: "/test",
-        element: <Test />,
-    },
-]);
+const router = createBrowserRouter(
+    [
+        {
+            path: "/",
+            element: <App />,
+        },
+        {
+            path: "/test",
+            element: <Test />,
+        }],
+    { basename: "/test_vite" });
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
