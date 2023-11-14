@@ -1,5 +1,5 @@
 // src/App.jsx
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Automatically import all files from the pages directory
 const pages = import.meta.glob("./pages/**/*.jsx", { eager: true });
@@ -24,13 +24,12 @@ for (const path of Object.keys(pages)) {
     });
 }
 // Create a router instance
-const router = createHashRouter(
+const router = createBrowserRouter(
     routes.map(({ Element, ErrorBoundary, ...rest }) => ({
         ...rest,
         element: <Element />,
         ...(ErrorBoundary && { errorElement: <ErrorBoundary /> }),
-    })),
-    { basename: '/test_vite/' }
+    }))
 );
 
 const App = () => {
