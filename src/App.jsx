@@ -29,7 +29,8 @@ const router = createBrowserRouter(
         ...rest,
         element: <Element />,
         ...(ErrorBoundary && { errorElement: <ErrorBoundary /> }),
-    }))
+    })),
+    { basename: '/test_vite/' }
 );
 
 const App = () => {
